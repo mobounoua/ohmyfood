@@ -1,0 +1,13 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "projet ohmyfood openclassrooms",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "Bounoua Mohammed",
+  "license": "ISC", 
+  "dependencies": {
+    "sass": "1.69.7"
+  }
+}
