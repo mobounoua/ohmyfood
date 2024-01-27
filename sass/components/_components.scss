@@ -1,0 +1,38 @@
+.bouton{
+    color: white;
+    border: none;
+    border-radius: 25px;
+    background: $button-background;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 20px;
+    @include shadow;
+    cursor: pointer; 
+    transition: all  0.4s;
+    &:hover{
+        @include shadow-hover;
+        transform: scale(100.5%);
+        opacity: 0.9;
+    }
+}
+
+.restaurants__card__nouveau{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    z-index: 1;
+    background-color: #99E2D0;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    p{
+        font-size: 14px;
+        color: #008766;
+        font-family: 'Roboto';
+        font-weight: 600;
+    }
+}

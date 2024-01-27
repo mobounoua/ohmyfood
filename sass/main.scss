@@ -1,3 +1,7 @@
-body {
-    background-color: red;
-}
+@import "utils/variables";
+@import "utils/mixins";
+@import "base/resets";
+@import "components/components";
+@import "Layout/header";
+@import "Layout/footer";
+@import "pages/home";
