@@ -63,6 +63,11 @@ header .header__logo {
   padding: 20px 15px 15px 15px;
   z-index: 2;
 }
+@media screen and (min-width: 768px) {
+  header .header__logo {
+    box-shadow: none;
+  }
+}
 header .header__logo img {
   width: 170px;
   height: 30px;
@@ -77,6 +82,11 @@ header .header__location {
   height: 50px;
   font-family: "Roboto", sans-serif;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 768px) {
+  header .header__location {
+    box-shadow: none;
+  }
 }
 header .header__location input {
   border: none;
@@ -103,11 +113,22 @@ footer {
   flex-direction: column;
   padding: 20px;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row-reverse;
+    padding-top: 50px;
+  }
+}
 footer .footer__logo h2 {
   font-family: "Shrikhand";
   color: white;
   font-size: 18px;
   font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__logo h2 {
+    margin: 0px 40px 10px;
+  }
 }
 footer .footer__content {
   margin: 10px 0;
@@ -119,11 +140,23 @@ footer .footer__content {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  footer .footer__content {
+    flex-direction: row;
+    margin-right: 50px;
+    gap: 10px;
+  }
+}
 footer .footer__content .fa-utensils {
   margin-right: 11px;
 }
 footer .footer__content .fa-handshake-angle {
   margin-right: 5px;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__content .footer__content--marge {
+    margin-left: 30px;
+  }
 }
 
 /******section reservation*******/
@@ -142,6 +175,11 @@ footer .footer__content .fa-handshake-angle {
   font-family: "Roboto";
   font-size: 24px;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .reservation h1 {
+    font-size: 40px;
+  }
 }
 .reservation p {
   text-align: center;
@@ -164,6 +202,13 @@ footer .footer__content .fa-handshake-angle {
   margin-left: 10px;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .fonctionnement {
+    padding: 30px 12%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+}
 .fonctionnement h2 {
   font-family: "Roboto";
   font-size: 24px;
@@ -175,7 +220,19 @@ footer .footer__content .fa-handshake-angle {
   flex-direction: column;
   gap: 25px;
 }
-.fonctionnement__container__button {
+@media screen and (min-width: 768px) {
+  .fonctionnement__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fonctionnement__container a {
+    width: 31%;
+  }
+}
+.fonctionnement__container a .fonctionnement__container__button {
   display: flex;
   gap: 20px;
   height: 72px;
@@ -187,7 +244,7 @@ footer .footer__content .fa-handshake-angle {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
 }
-.fonctionnement__container__button span {
+.fonctionnement__container a .fonctionnement__container__button span {
   background: #9356dc;
   width: 24px;
   height: 24px;
@@ -202,20 +259,20 @@ footer .footer__content .fa-handshake-angle {
   font-family: roboto;
   font-size: 0.9rem;
 }
-.fonctionnement__container__button .fa-solid {
+.fonctionnement__container a .fonctionnement__container__button .fa-solid {
   margin-left: 30px;
   font-size: 20px;
 }
-.fonctionnement__container__button .fa-solid.fa-mobile-screen-button {
+.fonctionnement__container a .fonctionnement__container__button .fa-solid.fa-mobile-screen-button {
   color: #7E7E7E;
 }
-.fonctionnement__container__button .fa-solid.fa-list {
+.fonctionnement__container a .fonctionnement__container__button .fa-solid.fa-list {
   color: #7E7E7E;
 }
-.fonctionnement__container__button .fa-solid.fa-store {
+.fonctionnement__container a .fonctionnement__container__button .fa-solid.fa-store {
   color: #9356dc;
 }
-.fonctionnement__container__button h3 {
+.fonctionnement__container a .fonctionnement__container__button h3 {
   font-size: 1rem;
 }
 
@@ -224,6 +281,11 @@ footer .footer__content .fa-handshake-angle {
   width: 100%;
   background: #F6F6F6;
   padding: 30px 20px 50px 20px;
+}
+@media screen and (min-width: 768px) {
+  .restaurants {
+    padding: 10px 12% 30px;
+  }
 }
 .restaurants h2 {
   font-family: "Roboto";
@@ -234,6 +296,13 @@ footer .footer__content .fa-handshake-angle {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .restaurants__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 100px;
+  }
 }
 .restaurants__card__content {
   position: relative;
@@ -288,6 +357,7 @@ footer .footer__content .fa-handshake-angle {
   opacity: 0;
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
   transition: all 0.4s ease-in-out;
   background-image: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
 }

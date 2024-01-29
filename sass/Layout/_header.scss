@@ -12,10 +12,13 @@ header{
         height: 63px;
         padding: 20px 15px 15px 15px;
         z-index: 2;
+        @media screen and (min-width:768px) {
+            box-shadow: none;
+        }
         img{
             width: 170px;
             height: 30px;
-        }
+        }      
     }
     .header__location{
         background-color: $header-background;
@@ -27,6 +30,9 @@ header{
         height: 50px;
         font-family: 'Roboto', sans-serif;      
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        @media screen and (min-width:768px) {
+            box-shadow: none;
+        }
         input{
             border: none;
             background-color: $header-background;

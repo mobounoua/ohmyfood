@@ -11,6 +11,9 @@
         margin: 0px;
         padding: 40px 55px 0px 55px;
         @include h2-section;
+        @media screen and (min-width:768px){
+            font-size: 40px;
+        }
     }
     p{
         text-align: center;
@@ -33,6 +36,11 @@
     padding: 20px;
     margin-left: 10px;
     margin-bottom: 40px;
+    @media screen and (min-width:768px) {
+        padding: 30px 12%;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
     h2{
         @include h2-section;
         margin-bottom: 25px;
@@ -40,48 +48,60 @@
     &__container{ 
         display: flex;
         flex-direction: column;
-        gap: 25px;       
-        &__button{
+        gap: 25px;
+        @media screen and (min-width:768px){
             display: flex;
-            gap: 20px;
-            height: 72px;
-            align-items: center;
-            border: none;
-            background: $grey-background;
-            border-radius: 20px;
-            font-family: roboto, sans-serif;
-            @include shadow;
-            position: relative;
-            span{
-                background: $color-elipse;
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        a{
+            @media screen and (min-width:768px) {
+                width: 31%;
+            }      
+            .fonctionnement__container__button{
                 display: flex;
-                justify-content: center;
+                gap: 20px;
+                height: 72px;
                 align-items: center;
-                color: white;
-                position: absolute;
-                left: -10px;
-                top: 25px;
-                font-family: roboto;
-                font-size: 0.9rem;
-            }
-            .fa-solid{
-                margin-left: 30px;
-                font-size: 20px;
-                &.fa-mobile-screen-button{
-                    color: #7E7E7E;
+                border: none;
+                background: $grey-background;
+                border-radius: 20px;
+                font-family: roboto, sans-serif;
+                @include shadow;
+                position: relative;
+                @media screen and (min-width:768px){
                 }
-                &.fa-list{
-                    color: #7E7E7E;
+                span{
+                    background: $color-elipse;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    position: absolute;
+                    left: -10px;
+                    top: 25px;
+                    font-family: roboto;
+                    font-size: 0.9rem;
                 }
-                &.fa-store{
-                    color: $color-elipse;
+                .fa-solid{
+                    margin-left: 30px;
+                    font-size: 20px;
+                    &.fa-mobile-screen-button{
+                        color: #7E7E7E;
+                    }
+                    &.fa-list{
+                        color: #7E7E7E;
+                    }
+                    &.fa-store{
+                        color: $color-elipse;
+                    }
                 }
-            }
-            h3{
-                font-size: 1rem;
+                h3{
+                    font-size: 1rem;
+                }
             }
         }    
     }
@@ -91,6 +111,9 @@
     width: 100%;
     background: $grey-background;
     padding: 30px 20px 50px 20px;
+    @media screen and (min-width:768px) {
+        padding: 10px 12% 30px;
+    }
     h2{
         @include h2-section;
     }    
@@ -98,6 +121,11 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @media screen and ( min-width:768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 100px;
+        }
         &__content{
             position: relative;
             overflow: hidden;
@@ -148,7 +176,8 @@
                 .fa-solid{
                     opacity: 0;
                     color: transparent;
-                    background-clip: text ;                   
+                    background-clip: text ;
+                    -webkit-background-clip: text;                   
                     transition: all 0.4s ease-in-out;
                     background-image: $button-background;
                     &:hover{
