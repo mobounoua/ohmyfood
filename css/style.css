@@ -23,7 +23,7 @@ body {
 }
 .bouton:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
-  transform: scale(100.5%);
+  transform: scale(1.001);
   opacity: 0.9;
 }
 
@@ -172,6 +172,7 @@ footer .footer__content .fa-handshake-angle {
 /******section reservation*******/
 .reservation {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -211,6 +212,7 @@ footer .footer__content .fa-handshake-angle {
   padding: 20px;
   margin-left: 10px;
   margin-bottom: 40px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .fonctionnement {
@@ -375,15 +377,34 @@ footer .footer__content .fa-handshake-angle {
   opacity: 1;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /**photo d'accueil des pages de restaurants**/
 .image-restaurant {
   width: 100%;
   height: 275px;
 }
+@media screen and (min-width: 768px) {
+  .image-restaurant {
+    height: 380px;
+  }
+}
 .image-restaurant img {
   height: 275px;
   width: 100%;
   object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .image-restaurant img {
+    height: 380px;
+    object-fit: cover;
+  }
 }
 
 /**titre du restaurant**/
@@ -395,11 +416,22 @@ footer .footer__content .fa-handshake-angle {
   border-radius: 40px 40px 0 0;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .titre-restaurant {
+    justify-content: center;
+    width: 100%;
+  }
+}
 .titre-restaurant h1 {
   font-family: "shrikhand";
   font-size: 28px;
   font-weight: 400;
   padding: 15px;
+}
+@media screen and (min-width: 768px) {
+  .titre-restaurant .titre-heart {
+    position: relative;
+  }
 }
 .titre-restaurant .titre-heart i {
   cursor: pointer;
@@ -407,6 +439,17 @@ footer .footer__content .fa-handshake-angle {
   top: 42px;
   right: 40px;
   font-size: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .titre-restaurant .titre-heart i {
+    top: -10px;
+    right: -25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .titre-restaurant .titre-heart i {
+    top: 22px;
+  }
 }
 .titre-restaurant .titre-heart .fa-solid {
   opacity: 0;
@@ -425,14 +468,27 @@ footer .footer__content .fa-handshake-angle {
   display: flex;
   flex-direction: column;
   margin-top: -30px;
+  border-radius: 40px 40px 0 0;
   background-color: #F6F6F6;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container-menu {
+    width: 80%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /** titre , ligne et menu **/
 .card-box {
   background-color: #F6F6F6;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .card-box {
+    width: 60%;
+  }
 }
 .card-box h2 {
   font-family: "Roboto";
@@ -455,7 +511,7 @@ footer .footer__content .fa-handshake-angle {
 }
 .card-box .card-box__container__carte {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-end;
   background-color: #ffffff;
   border-radius: 15px;
@@ -464,31 +520,45 @@ footer .footer__content .fa-handshake-angle {
   height: 70px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+.card-box .card-box__container__carte:hover .card-box__container__carte-prix {
+  transform: translateX(0px);
+}
 .card-box .card-box__container__carte-texte {
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
   height: 100%;
   padding: 0 0 0 14px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .card-box .card-box__container__carte-texte h3 {
   margin: 0;
   font-size: 18px;
   font-family: "Roboto";
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-box .card-box__container__carte-texte p {
   margin: 0;
   font-size: 15px;
   font-family: "Roboto";
   font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .card-box .card-box__container__carte-prix {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  transform: translateX(60px);
+  transition: all 0.4s;
 }
 .card-box .card-box__container__carte-prix p {
   font-family: "Roboto";
@@ -497,6 +567,18 @@ footer .footer__content .fa-handshake-angle {
   color: #353535;
   padding-top: 27px;
   padding-right: 15px;
+}
+.card-box .card-box__container__carte-prix span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 100%;
+  font-size: 1.3rem;
+  background-color: #99E2D0;
+}
+.card-box .card-box__container__carte-prix span .fa-circle-check {
+  color: white;
 }
 
 /***bouton commander***/
@@ -509,6 +591,28 @@ footer .footer__content .fa-handshake-angle {
 .button__container .bouton {
   padding: 15px 48px;
   margin: 10px 0 40px 0;
+}
+
+@keyframes anim-card-box {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.entrees {
+  animation: anim-card-box 0.4s;
+}
+
+.plats {
+  animation: anim-card-box 0.8s;
+}
+
+.dessert {
+  animation: anim-card-box 1.2s;
 }
 
 /*# sourceMappingURL=style.css.map */

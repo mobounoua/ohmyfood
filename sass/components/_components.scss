@@ -12,7 +12,7 @@
     transition: all  0.4s;
     &:hover{
         @include shadow-hover;
-        transform: scale(100.5%);
+        transform: scale(1.001);
         opacity: 0.9;
     }
 }

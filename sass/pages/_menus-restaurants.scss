@@ -1,11 +1,25 @@
+main {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 /**photo d'accueil des pages de restaurants**/
 .image-restaurant{
     width: 100%;
     height: 275px;
+    @media screen and (min-width:768px){
+        height: 380px;
+    }
     img{
         height: 275px;
         width: 100%;
         object-fit: cover;
+        @media screen and (min-width:768px){
+            height: 380px;
+            object-fit: cover;
+        }
     }
 }
 /**titre du restaurant**/
@@ -15,8 +29,11 @@
     align-items: center;
     background-color: $grey-background;
     border-radius: 40px 40px 0 0;
-
     position: relative;
+    @media screen and (min-width:768px) {
+        justify-content: center;
+        width: 100%;
+    }
     h1{
         font-family: 'shrikhand';
         font-size: 28px;
@@ -24,12 +41,22 @@
         padding: 15px;
     }
     .titre-heart{
+        @media screen and (min-width:768px) {
+            position: relative;
+        }
         i{
             cursor: pointer;
             position: absolute;
             top: 42px;
             right: 40px;
             font-size: 1.5rem;
+            @media screen and (min-width:768px) {
+                top: -10px;
+                right : -25px;
+            }
+            @media screen and (max-width:350px) {
+                top: 22px
+            }       
         }
         .fa-solid{
             opacity: 0;
@@ -50,14 +77,23 @@
     display: flex;
     flex-direction: column;
     margin-top: -30px;
+    border-radius: 40px 40px 0 0;
     background-color: $grey-background;
     width: 100%;
+    @media screen and (min-width: 768px){
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
 }
 
 /** titre , ligne et menu **/
 .card-box{
     background-color: $grey-background;
     margin-bottom: 30px;
+    @media screen and (min-width: 768px){
+        width: 60%;
+    }
     h2{
         font-family: 'Roboto';
         font-size: 16px;
@@ -78,47 +114,75 @@
         gap: 12px;
         &__carte{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-end;
             background-color: $white-background;
             border-radius: 15px;
             overflow: hidden;
             width: 100%;
             height: 70px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);       
-        }
-        &__carte-texte{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            height: 100%;
-            padding: 0 0 0 14px;
-            h3{
-                margin: 0;
-                font-size: 18px;
-                font-family: 'Roboto';
-                font-weight: 600;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            &:hover{
+                & .card-box__container__carte-prix{
+                    transform: translateX(0px);
+                }
             }
-            p{
-                margin: 0;
-                font-size: 15px;
-                font-family: 'Roboto';
-                font-weight: 300;
+            &-texte{
+                margin-right: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                height: 100%;
+                padding: 0 0 0 14px;
+                overflow: hidden;
+                white-space: nowrap;
+                h3{
+                    margin: 0;
+                    font-size: 18px;
+                    font-family: 'Roboto';
+                    font-weight: 600;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                p{
+                    margin: 0;
+                    font-size: 15px;
+                    font-family: 'Roboto';
+                    font-weight: 300;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
             }
-        }
-        &__carte-prix{
-            display: flex ;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            p{
-                font-family: 'Roboto';
-                font-weight: 700;
-                font-size: 15px;
-                color: $dark-grey;
-                padding-top: 27px;
-                padding-right: 15px;
+            &-prix{
+                display: flex ;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                transform: translateX(60px);
+                transition: all 0.4s;
+                p{
+                    font-family: 'Roboto';
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: $dark-grey;
+                    padding-top: 27px;
+                    padding-right: 15px;
+                }
+                span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 60px;
+                    height: 100%;
+                    font-size: 1.3rem;
+                    background-color: #99E2D0;
+                    .fa-circle-check{
+                        color: white;
+                    }
+                }
             }
         }            
     }
