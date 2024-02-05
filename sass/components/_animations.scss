@@ -1,3 +1,4 @@
+//*** animation pages de restaurants ***//
 @keyframes anim-card-box {
     0% {
       transform: translateX(-500px);
@@ -17,3 +18,48 @@
   .dessert {
     animation: anim-card-box 1.2s;
   }
+
+
+//**loader**//
+
+.loader__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    background-color: rgba(70, 70, 70, 0.4);
+    animation: fadeOut 2500ms linear forwards;
+    .loader{
+        width: 150px;
+        height: 150px;
+        border: 10px solid white;
+        border-bottom-color: transparent;
+        border-top-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 2500ms linear infinite;       
+    }
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
